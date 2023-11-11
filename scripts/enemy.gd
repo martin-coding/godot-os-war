@@ -1,8 +1,14 @@
-extends Area2D
+extends PathFollow2D
 
 
-@onready var pathFollow: PathFollow2D = get_parent()
 @export var speed: float = 40.0
 
+func _ready():
+	progress = 0
+
 func _physics_process(delta):
-	pathFollow.progress += speed * delta
+	if progress_ratio < 1.0:
+		progress += speed * delta
+	else:
+		queue_free()
+		print("-1 Health") # gets called multiple times
