@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l3sneqw5pcsx"
-path="res://.godot/imported/freebsd.png-42fe6411cd48429dfbca78b21830f52d.ctex"
+uid="uid://oprtih5lhajy"
+path="res://.godot/imported/tux.png-82fe3266f931229e646d28378e701b17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/towers/freebsd.png"
-dest_files=["res://.godot/imported/freebsd.png-42fe6411cd48429dfbca78b21830f52d.ctex"]
+source_file="res://art/tower/tux.png"
+dest_files=["res://.godot/imported/tux.png-82fe3266f931229e646d28378e701b17.ctex"]
 
 [params]
 

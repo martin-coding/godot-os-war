@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qc4bbswjc51"
-path="res://.godot/imported/microsoft-windows-logo-png-file-windows-logo-2012-svg-768.png-5bbb9ddc08168a6a22145932b8598d72.ctex"
+uid="uid://bi8l7yoowonsm"
+path="res://.godot/imported/arch.png-26c064e851935dfcfc02f48275786436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemies/microsoft-windows-logo-png-file-windows-logo-2012-svg-768.png"
-dest_files=["res://.godot/imported/microsoft-windows-logo-png-file-windows-logo-2012-svg-768.png-5bbb9ddc08168a6a22145932b8598d72.ctex"]
+source_file="res://art/tower/arch.png"
+dest_files=["res://.godot/imported/arch.png-26c064e851935dfcfc02f48275786436.ctex"]
 
 [params]
 

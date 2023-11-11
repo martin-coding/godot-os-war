@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqsx5kycl0ona"
-path="res://.godot/imported/microsoft-windows-logo-png-microsoft-windows-logo-pre-xp-svg-png-2000.png-2a4764f9f51717afde76fc33b85e2816.ctex"
+uid="uid://cqqde67kdkmj2"
+path="res://.godot/imported/BasicTiles.png-cfa9a84717ae97d4b3a21dd64c6abedd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemies/microsoft-windows-logo-png-microsoft-windows-logo-pre-xp-svg-png-2000.png"
-dest_files=["res://.godot/imported/microsoft-windows-logo-png-microsoft-windows-logo-pre-xp-svg-png-2000.png-2a4764f9f51717afde76fc33b85e2816.ctex"]
+source_file="res://art/wallpaper/BasicTiles.png"
+dest_files=["res://.godot/imported/BasicTiles.png-cfa9a84717ae97d4b3a21dd64c6abedd.ctex"]
 
 [params]
 

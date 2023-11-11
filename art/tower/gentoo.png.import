@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3u81rbchxqlu"
-path="res://.godot/imported/lfs.png-b489147a4db8cb6f36df46ea02eb560d.ctex"
+uid="uid://7lve5hrvkrvu"
+path="res://.godot/imported/gentoo.png-47e787fd05203ab8b944b5a0f0c18c47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/towers/lfs.png"
-dest_files=["res://.godot/imported/lfs.png-b489147a4db8cb6f36df46ea02eb560d.ctex"]
+source_file="res://art/tower/gentoo.png"
+dest_files=["res://.godot/imported/gentoo.png-47e787fd05203ab8b944b5a0f0c18c47.ctex"]
 
 [params]
 
