@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkgg8woixnjsb"]
 
 [ext_resource type="Texture2D" uid="uid://clw8bwk84lw3q" path="res://Art/BasicTiles.png" id="1_abr4h"]
-[ext_resource type="Texture2D" uid="uid://ctf3hqk1ly46h" path="res://Art/Icons/gentoo.png" id="2_3hbup"]
-[ext_resource type="Texture2D" uid="uid://bhdc6mwm8emxw" path="res://Art/Icons/arch.png" id="3_3wgbl"]
+[ext_resource type="Texture2D" uid="uid://ctf3hqk1ly46h" path="res://Art/Towers/gentoo.png" id="2_7xef7"]
+[ext_resource type="Texture2D" uid="uid://bhdc6mwm8emxw" path="res://Art/Towers/arch.png" id="3_iyt05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_640fa"]
 texture = ExtResource("1_abr4h")
@@ -36,9 +36,9 @@ zoom = Vector2(2, 2)
 [node name="Gentoo" type="Sprite2D" parent="Towers"]
 position = Vector2(-33, -65)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_3hbup")
+texture = ExtResource("2_7xef7")
 
 [node name="Arch" type="Sprite2D" parent="Towers"]
 position = Vector2(97, 95)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3wgbl")
+texture = ExtResource("3_iyt05")
