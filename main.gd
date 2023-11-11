@@ -13,5 +13,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
+
+
+func _on_timer_timeout():
+	spawners = get_tree().get_nodes_in_group("spawn_location")
+	# for loop
+	spawners[0].add_child(enemy.instantiate())
+	spawners[1].add_child(enemy.instantiate())
