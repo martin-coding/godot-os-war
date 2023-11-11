@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnxaiv4ldgke"
-path="res://.godot/imported/apple-logo-transparent-919981222.png-ab5c1ab3ab793d714198a294c5a8c542.ctex"
+path="res://.godot/imported/apple-logo-transparent-919981222.png-25edbf41ba89f7da7aa056c8515a0476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemies/apple-logo-transparent-919981222.png"
-dest_files=["res://.godot/imported/apple-logo-transparent-919981222.png-ab5c1ab3ab793d714198a294c5a8c542.ctex"]
+source_file="res://art/enemies/apple-logo-transparent-919981222.png"
+dest_files=["res://.godot/imported/apple-logo-transparent-919981222.png-25edbf41ba89f7da7aa056c8515a0476.ctex"]
 
 [params]
 

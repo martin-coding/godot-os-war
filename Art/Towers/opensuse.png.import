@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k4ykhirjkma5"
-path="res://.godot/imported/opensuse.png-d7b37989d4c0190bfd01754e1181498e.ctex"
+path="res://.godot/imported/opensuse.png-f8fef3e366650146dfb6a80061f03ab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Towers/opensuse.png"
-dest_files=["res://.godot/imported/opensuse.png-d7b37989d4c0190bfd01754e1181498e.ctex"]
+source_file="res://art/towers/opensuse.png"
+dest_files=["res://.godot/imported/opensuse.png-f8fef3e366650146dfb6a80061f03ab4.ctex"]
 
 [params]
 

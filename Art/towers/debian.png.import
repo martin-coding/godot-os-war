@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqk6sgyfso88y"
-path="res://.godot/imported/debian.png-7651223643051cfe1cba5c50178047d2.ctex"
+path="res://.godot/imported/debian.png-c918eed3c93915f6f85238863e3ffa71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/towers/debian.png"
-dest_files=["res://.godot/imported/debian.png-7651223643051cfe1cba5c50178047d2.ctex"]
+source_file="res://art/towers/debian.png"
+dest_files=["res://.godot/imported/debian.png-c918eed3c93915f6f85238863e3ffa71.ctex"]
 
 [params]
 

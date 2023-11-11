@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g2b53n1feb22"
-path="res://.godot/imported/microsoft-windows-logo-png-windows-logo-png-800.png-71459a012ed70240b0113865ce06a979.ctex"
+path="res://.godot/imported/microsoft-windows-logo-png-windows-logo-png-800.png-e2690c451a0f05b201d11da0cfb3698e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemies/microsoft-windows-logo-png-windows-logo-png-800.png"
-dest_files=["res://.godot/imported/microsoft-windows-logo-png-windows-logo-png-800.png-71459a012ed70240b0113865ce06a979.ctex"]
+source_file="res://art/enemies/microsoft-windows-logo-png-windows-logo-png-800.png"
+dest_files=["res://.godot/imported/microsoft-windows-logo-png-windows-logo-png-800.png-e2690c451a0f05b201d11da0cfb3698e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhdc6mwm8emxw"
-path="res://.godot/imported/arch.png-d7dae0549fc19a47674412a52f2f00cf.ctex"
+path="res://.godot/imported/arch.png-5b66674bbe4b32aaae79b993a2b9ecb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/towers/arch.png"
-dest_files=["res://.godot/imported/arch.png-d7dae0549fc19a47674412a52f2f00cf.ctex"]
+source_file="res://art/towers/arch.png"
+dest_files=["res://.godot/imported/arch.png-5b66674bbe4b32aaae79b993a2b9ecb9.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8ga78lhjjbyj"
-path="res://.godot/imported/redhat.png-ce966677a0b6b8f0d5a4356392b46862.ctex"
+path="res://.godot/imported/redhat.png-cd861bcf00f9f738a3ee0e44e5336692.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/towers/redhat.png"
-dest_files=["res://.godot/imported/redhat.png-ce966677a0b6b8f0d5a4356392b46862.ctex"]
+source_file="res://art/towers/redhat.png"
+dest_files=["res://.godot/imported/redhat.png-cd861bcf00f9f738a3ee0e44e5336692.ctex"]
 
 [params]
 

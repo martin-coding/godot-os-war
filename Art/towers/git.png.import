@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0enplnwim0th"
-path="res://.godot/imported/git.png-9f690edbc6f778dbfab843c34e42da17.ctex"
+path="res://.godot/imported/git.png-0c7ccf204f1ec7177783eee48862c331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/towers/git.png"
-dest_files=["res://.godot/imported/git.png-9f690edbc6f778dbfab843c34e42da17.ctex"]
+source_file="res://art/towers/git.png"
+dest_files=["res://.godot/imported/git.png-0c7ccf204f1ec7177783eee48862c331.ctex"]
 
 [params]
 
