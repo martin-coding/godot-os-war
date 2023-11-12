@@ -3,7 +3,7 @@ extends Node2D
 var spawners = []
 
 @onready var enemy = preload("res://entities/enemy.tscn")
-var projektil = preload("res://entities/projetkiles/bulet.tscn")
+var projektil = preload("res://entities/projectiles/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +25,6 @@ func _on_timer_timeout():
 
 
 
-func _on_bulet_shoot():
+func _on_bullet_shoot():
 	var shoot = projektil.instantiate()
 	add_child(shoot)

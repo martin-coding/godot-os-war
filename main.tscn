@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqqde67kdkmj2" path="res://art/wallpaper/BasicTiles.png" id="1_4dvch"]
 [ext_resource type="Script" path="res://main.gd" id="1_y801c"]
-[ext_resource type="PackedScene" uid="uid://b7kfkt50gxoq0" path="res://entities/projetkiles/bulet.tscn" id="3_u7e2q"]
+[ext_resource type="PackedScene" uid="uid://b7kfkt50gxoq0" path="res://entities/projectiles/bullet.tscn" id="3_u7e2q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3rea"]
 texture = ExtResource("1_4dvch")
@@ -54,8 +54,8 @@ zoom = Vector2(2, 2)
 wait_time = 5.0
 autostart = true
 
-[node name="bulet" parent="." instance=ExtResource("3_u7e2q")]
+[node name="bullet" parent="." instance=ExtResource("3_u7e2q")]
 position = Vector2(31, -243)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="shoot" from="bulet" to="." method="_on_bulet_shoot"]
+[connection signal="shoot" from="bullet" to="." method="_on_bullet_shoot"]
