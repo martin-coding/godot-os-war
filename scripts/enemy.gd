@@ -15,8 +15,9 @@ func _physics_process(delta):
 		print("-1 Health") # gets called multiple times
 
 # to take lifepoints
-func _on_bullet_hit():
+func _on_area_2d_body_entered(_body):
 	health -= 1
 	if health == 0:
 		queue_free()
 		print("Dead")
+
