@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-@export var speed: float = 40.0
+@export var speed: float = 0.0 # gets set in main.gd, so we dont really need to initialize any value here
 
 var health = 1
 
@@ -12,12 +12,13 @@ func _physics_process(delta):
 		progress += speed * delta
 	else:
 		queue_free()
-		print("-1 Health") # gets called multiple times
+		print("-1 Health")
 
 # to take lifepoints
-func _on_area_2d_body_entered(_body):
+func _on_area_2d_body_entered(body):
 	health -= 1
+	body.queue_free() # destroy the projectile
 	if health == 0:
 		queue_free()
-		print("Dead")
+		print("Enemy died")
 

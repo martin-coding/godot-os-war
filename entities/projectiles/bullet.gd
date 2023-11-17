@@ -6,5 +6,3 @@ signal hit
 
 func _on_timer_timeout():
 	shoot.emit()
-
-
