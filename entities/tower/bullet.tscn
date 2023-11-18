@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://khxb3ax8ilx6"]
+
+[ext_resource type="Script" path="res://entities/tower/bullet.gd" id="1_kf5fa"]
+[ext_resource type="Texture2D" uid="uid://ccnc8fs76m20c" path="res://icon.svg" id="2_4nxkc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b816v"]
+
+[node name="Area2D" type="Area2D" groups=["projectile"]]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_kf5fa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4nxkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_b816v")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
