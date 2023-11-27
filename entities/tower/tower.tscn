@@ -9,6 +9,7 @@
 script = ExtResource("1_xlceu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
 texture = ExtResource("2_ddckq")
 
 [node name="SightArea" type="Area2D" parent="."]

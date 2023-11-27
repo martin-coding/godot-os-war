@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://32uqp2kt3dy4"]
 
-[ext_resource type="Texture2D" uid="uid://cryk3xoo44q8u" path="res://art/enemy/microsoft.png" id="1_kj5t5"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_yqwu2"]
+[ext_resource type="Texture2D" uid="uid://bivyscdevv7ye" path="res://art/enemy/enemy-01.png" id="2_jkjfl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt0x3"]
 
@@ -11,8 +11,9 @@ loop = false
 script = ExtResource("1_yqwu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_kj5t5")
+texture_filter = 1
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_jkjfl")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 
