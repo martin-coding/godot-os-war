@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://vxl0n8ihck2s"]
+[gd_scene load_steps=10 format=3 uid="uid://vxl0n8ihck2s"]
 
 [ext_resource type="Texture2D" uid="uid://cqqde67kdkmj2" path="res://art/wallpaper/BasicTiles.png" id="1_4dvch"]
 [ext_resource type="Script" path="res://main.gd" id="1_y801c"]
+[ext_resource type="PackedScene" uid="uid://32uqp2kt3dy4" path="res://entities/enemy.tscn" id="3_74qkq"]
 [ext_resource type="PackedScene" uid="uid://bpjbvoudmd5qt" path="res://entities/tower/tower.tscn" id="3_ll5sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3rea"]
@@ -32,6 +33,9 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="SystemFont" id="SystemFont_lad62"]
+font_weight = 600
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_y801c")
 
@@ -43,6 +47,9 @@ metadata/_edit_lock_ = true
 
 [node name="Path1" type="Path2D" parent="Wallpaper" groups=["spawn_location"]]
 curve = SubResource("Curve2D_h73n0")
+
+[node name="Enemy" parent="Wallpaper/Path1" instance=ExtResource("3_74qkq")]
+position = Vector2(-700, 0)
 
 [node name="Path2" type="Path2D" parent="Wallpaper" groups=["spawn_location"]]
 curve = SubResource("Curve2D_ojea1")
@@ -58,4 +65,21 @@ autostart = true
 position = Vector2(125, 0)
 scale = Vector2(0.5, 0.5)
 
+[node name="UI Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Health" type="Label" parent="UI Control"]
+layout_mode = 0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -466.0
+offset_bottom = -312.0
+theme_override_fonts/font = SubResource("SystemFont_lad62")
+theme_override_font_sizes/font_size = 28
+text = "100 ❤️"
+
+[connection signal="damagePlayer" from="." to="." method="_on_damage_player"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
