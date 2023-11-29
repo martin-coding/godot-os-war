@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("projectile"):
-		health -= 1
+		health -= area.get_damage()
 		area.queue_free() # destroy the projectile
 		if health == 0:
 			queue_free() # "kill" the enemy
