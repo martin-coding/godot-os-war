@@ -11,7 +11,7 @@ func _physics_process(delta):
 	if progress_ratio < 1.0:
 		progress += speed * delta
 	else:
-		get_parent().get_parent().get_parent().emit_signal("damagePlayer", 1) # yea this is very secure for sure
+		eventmanager.broadcast_player_take_damage(1)
 		queue_free()
 
 func _on_area_2d_area_entered(area):

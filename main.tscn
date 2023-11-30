@@ -81,5 +81,4 @@ theme_override_fonts/font = SubResource("SystemFont_lad62")
 theme_override_font_sizes/font_size = 28
 text = "100 ❤️"
 
-[connection signal="damagePlayer" from="." to="." method="_on_damage_player"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
