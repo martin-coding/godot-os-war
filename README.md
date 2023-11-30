@@ -1,5 +1,7 @@
 # OS War
-This will (hopefully) be a simple tower defense game.
+A simple tower defense game created with godot.
+
+### Godot Version: 4.2
 
 ### Contribute
-If u want to contribute, feel free to do so, but please describe what exactly you're changing or adding.
+If u want to contribute, feel free to do so, but please describe what you're changing/adding and why.
