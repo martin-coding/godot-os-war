@@ -12,17 +12,17 @@ func _ready():
 
 func _process(delta):
 	sprite_reference.material.set_shader_parameter("progress", get_hit_timer_progress())
-	
+
 func get_hit_timer_progress():
 	return hit_timer.time_left / hit_timer.wait_time
-	
+
 func _physics_process(delta):
 	if progress_ratio < 1.0:
 		progress += speed * delta
 	else:
 		eventmanager.broadcast_player_take_damage(get_damage())
 		queue_free()
-		
+
 func get_damage():
 	return damage
 

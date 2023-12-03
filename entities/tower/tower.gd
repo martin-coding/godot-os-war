@@ -13,7 +13,7 @@ var ready_to_fire = false
 func _ready():
 	shoot_progress_bar.min_value = 0
 	shoot_progress_bar.max_value = shoot_timer.wait_time
-	
+
 func _physics_process(_delta):
 	if enemies != []:
 		current_enemy = enemies[0]
@@ -33,7 +33,7 @@ func _process(delta):
 		shoot_progress_bar.visible = false
 	else:
 		shoot_progress_bar.visible = true
-	
+
 func _on_sight_area_area_entered(area):
 	if area.is_in_group("enemy"):
 		enemies.append(area)

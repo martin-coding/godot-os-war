@@ -23,10 +23,17 @@ one_shot = true
 autostart = true
 
 [node name="ShootProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -50.0
 offset_top = 40.0
 offset_right = 50.0
-offset_bottom = 67.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 show_percentage = false
 
 [connection signal="area_entered" from="SightArea" to="." method="_on_sight_area_area_entered"]

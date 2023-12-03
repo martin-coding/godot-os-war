@@ -62,7 +62,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Tower" parent="." instance=ExtResource("3_ll5sa")]
-position = Vector2(125, 0)
+position = Vector2(128, 0)
 scale = Vector2(0.5, 0.5)
 
 [node name="UI Control" type="Control" parent="."]
