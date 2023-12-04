@@ -5,7 +5,6 @@ var money: int = 100
 
 var b_in_ui = false
 @onready var enemy = preload("res://entities/enemy.tscn")
-@onready var healthLbl = get_node("UI Control/Health")
 @onready var spawners: Array = get_tree().get_nodes_in_group("spawn_location")
 
 signal player_health_update

@@ -16,9 +16,7 @@ func _on_tower_button_pressed(towerButton):
 	tower_to_place = towerButton.get_tower_class()
 	ghost_image.texture = towerButton.get_tower_texture()
 	tower_cost = towerButton.get_cost()
-	#TODO: Matt T: should try to figure ou a better way for this.
-	# This will probably break if we get bigger towers, or just change the tower size
-	offset = Vector2(128, 128) / 2
+	offset = ghost_image.size
 
 func _process(delta):
 	global_position = get_global_mouse_position() - offset
@@ -43,7 +41,7 @@ func _input(event):
 	if is_instance_valid(tower_to_place):
 		if event.is_action_pressed('left_click'):
 			var instance = tower_to_place.instantiate()
-			instance.global_position = global_position + offset / 2
+			instance.global_position = global_position + offset
 			helper.get_tower_group().add_child(instance)
 			eventmanager.broadcast_buy_tower(tower_cost)
 			tower_to_place = null
