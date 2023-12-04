@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5bpm1i4e17tu"]
+[gd_scene load_steps=6 format=3 uid="uid://c5bpm1i4e17tu"]
 
 [ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/towerbutton.tscn" id="1_77xj1"]
+[ext_resource type="PackedScene" uid="uid://cxhkiae15b8lv" path="res://entities/tower/speed_tower.tscn" id="2_cya8s"]
 [ext_resource type="Script" path="res://scripts/ui/healthui.gd" id="2_y5457"]
 [ext_resource type="PackedScene" uid="uid://c5ouqw68u8sy3" path="res://entities/ui/money_ui.tscn" id="3_15x11"]
 
@@ -27,9 +28,7 @@ layout_mode = 2
 
 [node name="TowerButton2" parent="Panel/HBoxContainer" instance=ExtResource("1_77xj1")]
 layout_mode = 2
-
-[node name="TowerButton3" parent="Panel/HBoxContainer" instance=ExtResource("1_77xj1")]
-layout_mode = 2
+tower_class_reference = ExtResource("2_cya8s")
 
 [node name="Health" type="Label" parent="."]
 offset_left = 7.0

@@ -1,6 +1,6 @@
 extends Button
 
-var tower_class_reference = preload("res://entities/tower/tower.tscn")
+@export var tower_class_reference = preload("res://entities/tower/tower.tscn")
 @onready var price_text = get_node("VBoxContainer/HBoxContainer/PriceText")
 @onready var tower_image = get_node("VBoxContainer/TowerImage")
 

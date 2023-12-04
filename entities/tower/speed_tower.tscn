@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxhkiae15b8lv"]
+
+[ext_resource type="Script" path="res://entities/tower/tower.gd" id="1_5udkm"]
+[ext_resource type="Texture2D" uid="uid://bi8l7yoowonsm" path="res://art/tower/arch.png" id="2_4elmi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47qsh"]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_5udkm")
+price = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+texture = ExtResource("2_4elmi")
+
+[node name="SightArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
+scale = Vector2(30, 30)
+shape = SubResource("CircleShape2D_47qsh")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="ShootProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 40.0
+offset_right = 50.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[connection signal="area_entered" from="SightArea" to="." method="_on_sight_area_area_entered"]
+[connection signal="area_exited" from="SightArea" to="." method="_on_sight_area_area_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
