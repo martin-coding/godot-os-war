@@ -2,16 +2,18 @@ extends Node2D
 
 
 var health: int = 100
-
+var money: int = 100
 @onready var enemy = preload("res://entities/enemy.tscn")
 @onready var healthLbl = get_node("UI Control/Health")
 @onready var spawners: Array = get_tree().get_nodes_in_group("spawn_location")
 
+
 signal player_health_update
+signal player_money_update
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	eventmanager.connect("on_player_take_damage", _on_damage_player)
-
+	emit_signal("player_money_update", money)
 	for spawner in spawners:
 		var new_enemy = enemy.instantiate()
 		new_enemy.speed = randf_range(60.0, 120.0)
