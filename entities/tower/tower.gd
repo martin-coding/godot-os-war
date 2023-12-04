@@ -47,8 +47,9 @@ func _on_sight_area_area_exited(area):
 func _on_shoot_timer_timeout():
 	ready_to_fire = true
 
-func get_price():
+func get_price() -> int:
 	return price
 
-func get_texture():
+func get_texture() -> Texture2D:
 	return $Sprite2D.texture
+

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://vxl0n8ihck2s"]
+[gd_scene load_steps=11 format=3 uid="uid://vxl0n8ihck2s"]
 
 [ext_resource type="Texture2D" uid="uid://cqqde67kdkmj2" path="res://art/wallpaper/BasicTiles.png" id="1_4dvch"]
 [ext_resource type="Script" path="res://main.gd" id="1_y801c"]
 [ext_resource type="PackedScene" uid="uid://32uqp2kt3dy4" path="res://entities/enemy.tscn" id="3_74qkq"]
 [ext_resource type="PackedScene" uid="uid://bpjbvoudmd5qt" path="res://entities/tower/tower.tscn" id="3_ll5sa"]
 [ext_resource type="PackedScene" uid="uid://c5bpm1i4e17tu" path="res://entities/ui/game_ui.tscn" id="5_2mtut"]
+[ext_resource type="PackedScene" uid="uid://bnjkp3wj7kdie" path="res://entities/ui/ghost_cursor.tscn" id="6_fq8hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3rea"]
 texture = ExtResource("1_4dvch")
@@ -59,10 +60,13 @@ zoom = Vector2(1.5, 1.5)
 wait_time = 5.0
 autostart = true
 
-[node name="Tower" parent="." instance=ExtResource("3_ll5sa")]
+[node name="TowerGroup" type="Node2D" parent="." groups=["tower_group"]]
+
+[node name="Tower" parent="TowerGroup" instance=ExtResource("3_ll5sa")]
 position = Vector2(128, 0)
-scale = Vector2(0.5, 0.5)
 
 [node name="GameUI" parent="." instance=ExtResource("5_2mtut")]
+
+[node name="GhostCursor" parent="." instance=ExtResource("6_fq8hv")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

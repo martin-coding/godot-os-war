@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxhkiae15b8lv"]
+[gd_scene load_steps=5 format=3 uid="uid://cxhkiae15b8lv"]
 
 [ext_resource type="Script" path="res://entities/tower/tower.gd" id="1_5udkm"]
 [ext_resource type="Texture2D" uid="uid://bi8l7yoowonsm" path="res://art/tower/arch.png" id="2_4elmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47qsh"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1l7wc"]
+radius = 42.4264
+
 [node name="Tower" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_5udkm")
 price = 20
 
@@ -37,6 +41,14 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 show_percentage = false
+
+[node name="TowerCollision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerCollision"]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_1l7wc")
 
 [connection signal="area_entered" from="SightArea" to="." method="_on_sight_area_area_entered"]
 [connection signal="area_exited" from="SightArea" to="." method="_on_sight_area_area_exited"]
