@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://deuhw3whq8lk5"]
+
+[ext_resource type="Script" path="res://scripts/ui/towerbutton.gd" id="1_rlvxp"]
+[ext_resource type="Texture2D" uid="uid://oprtih5lhajy" path="res://art/tower/tux.png" id="2_c8mh0"]
+[ext_resource type="Texture2D" uid="uid://cabrl2kgpgooo" path="res://art/currency.png" id="3_3fuuw"]
+
+[sub_resource type="Theme" id="Theme_1w0x3"]
+Label/font_sizes/font_size = 39
+
+[node name="TowerButton" type="Button"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.046
+offset_right = 0.079998
+offset_bottom = 0.319996
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+script = ExtResource("1_rlvxp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 205.0
+offset_bottom = 210.0
+scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_c8mh0")
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_3fuuw")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1w0x3")
+text = "50"
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
