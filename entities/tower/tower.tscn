@@ -19,6 +19,7 @@ scale = Vector2(30, 30)
 shape = SubResource("CircleShape2D_47qsh")
 
 [node name="ShootTimer" type="Timer" parent="."]
+wait_time = 4.0
 one_shot = true
 autostart = true
 

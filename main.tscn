@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://vxl0n8ihck2s"]
+[gd_scene load_steps=10 format=3 uid="uid://vxl0n8ihck2s"]
 
 [ext_resource type="Texture2D" uid="uid://cqqde67kdkmj2" path="res://art/wallpaper/BasicTiles.png" id="1_4dvch"]
 [ext_resource type="Script" path="res://main.gd" id="1_y801c"]
 [ext_resource type="PackedScene" uid="uid://32uqp2kt3dy4" path="res://entities/enemy.tscn" id="3_74qkq"]
 [ext_resource type="PackedScene" uid="uid://bpjbvoudmd5qt" path="res://entities/tower/tower.tscn" id="3_ll5sa"]
-[ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/towerbutton.tscn" id="5_b3uxu"]
+[ext_resource type="PackedScene" uid="uid://c5bpm1i4e17tu" path="res://entities/ui/game_ui.tscn" id="5_2mtut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3rea"]
 texture = ExtResource("1_4dvch")
@@ -34,10 +34,7 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="SystemFont" id="SystemFont_lad62"]
-font_weight = 600
-
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["game"]]
 script = ExtResource("1_y801c")
 
 [node name="Wallpaper" type="TileMap" parent="."]
@@ -66,41 +63,6 @@ autostart = true
 position = Vector2(128, 0)
 scale = Vector2(0.5, 0.5)
 
-[node name="UI Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Health" type="Label" parent="UI Control"]
-layout_mode = 0
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -466.0
-offset_bottom = -312.0
-theme_override_fonts/font = SubResource("SystemFont_lad62")
-theme_override_font_sizes/font_size = 28
-text = "100 ❤️"
-
-[node name="Panel" type="Panel" parent="."]
-offset_left = -144.0
-offset_top = 264.0
-offset_right = 256.0
-offset_bottom = 367.0
-metadata/_edit_group_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_right = 400.0
-offset_bottom = 50.0
-
-[node name="TowerButton" parent="Panel/HBoxContainer" instance=ExtResource("5_b3uxu")]
-layout_mode = 2
-
-[node name="TowerButton2" parent="Panel/HBoxContainer" instance=ExtResource("5_b3uxu")]
-layout_mode = 2
-
-[node name="TowerButton3" parent="Panel/HBoxContainer" instance=ExtResource("5_b3uxu")]
-layout_mode = 2
+[node name="GameUI" parent="." instance=ExtResource("5_2mtut")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

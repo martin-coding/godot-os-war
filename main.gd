@@ -7,6 +7,7 @@ var health: int = 100
 @onready var healthLbl = get_node("UI Control/Health")
 @onready var spawners: Array = get_tree().get_nodes_in_group("spawn_location")
 
+signal player_health_update
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	eventmanager.connect("on_player_take_damage", _on_damage_player)
@@ -25,7 +26,10 @@ func _on_timer_timeout():
 		new_enemy.set_progress(randf_range(0.0, 20.0))
 		spawner.add_child(new_enemy)
 
+func get_health():
+	return health
 
 func _on_damage_player(value) -> void:
 	health -= value
-	healthLbl.text = str(health) + "❤️"
+	emit_signal("player_health_update")
+
