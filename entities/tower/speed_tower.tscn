@@ -1,20 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpjbvoudmd5qt"]
+[gd_scene load_steps=5 format=3 uid="uid://cxhkiae15b8lv"]
 
-[ext_resource type="Script" path="res://entities/tower/tower.gd" id="1_xlceu"]
-[ext_resource type="Texture2D" uid="uid://oprtih5lhajy" path="res://art/tower/tux.png" id="2_ddckq"]
+[ext_resource type="Script" path="res://entities/tower/tower.gd" id="1_5udkm"]
+[ext_resource type="Texture2D" uid="uid://bi8l7yoowonsm" path="res://art/tower/arch.png" id="2_4elmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47qsh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gqqe1"]
-radius = 50.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_1l7wc"]
+radius = 42.4264
 
 [node name="Tower" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_xlceu")
+script = ExtResource("1_5udkm")
+price = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
-texture = ExtResource("2_ddckq")
+texture = ExtResource("2_4elmi")
 
 [node name="SightArea" type="Area2D" parent="."]
 
@@ -23,7 +24,7 @@ scale = Vector2(30, 30)
 shape = SubResource("CircleShape2D_47qsh")
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.5
 one_shot = true
 autostart = true
 
@@ -46,7 +47,8 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerCollision"]
-shape = SubResource("CircleShape2D_gqqe1")
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_1l7wc")
 
 [connection signal="area_entered" from="SightArea" to="." method="_on_sight_area_area_entered"]
 [connection signal="area_exited" from="SightArea" to="." method="_on_sight_area_area_exited"]

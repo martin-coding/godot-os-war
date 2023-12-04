@@ -4,7 +4,7 @@ var bullet = preload("res://entities/tower/bullet.tscn")
 var enemies = []
 var current_enemy
 var ready_to_fire = false
-
+@export var price = 10
 @onready var sprite_reference = get_node("Sprite2D")
 
 @onready var shoot_progress_bar = get_node("ShootProgressBar")
@@ -46,3 +46,10 @@ func _on_sight_area_area_exited(area):
 
 func _on_shoot_timer_timeout():
 	ready_to_fire = true
+
+func get_price() -> int:
+	return price
+
+func get_texture() -> Texture2D:
+	return $Sprite2D.texture
+
