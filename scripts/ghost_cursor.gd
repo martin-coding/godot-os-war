@@ -16,6 +16,8 @@ func _on_tower_button_pressed(towerButton):
 	tower_to_place = towerButton.get_tower_class()
 	ghost_image.texture = towerButton.get_tower_texture()
 	tower_cost = towerButton.get_cost()
+	#TODO: Matt T: should try to figure ou a better way for this.
+	# This will probably break if we get bigger towers, or just change the tower size
 	offset = Vector2(128, 128) / 2
 
 func _process(delta):
@@ -35,6 +37,7 @@ func _physics_process(delta):
 		b_can_place = true
 
 func _input(event):
+	#TODO: Matt T: we should probably not have them be able to spawn in the track
 	if b_can_place == false and is_instance_valid(tower_to_place):
 		return
 	if is_instance_valid(tower_to_place):
@@ -45,3 +48,4 @@ func _input(event):
 			eventmanager.broadcast_buy_tower(tower_cost)
 			tower_to_place = null
 			tower_cost = 0
+	#TODO: Matt T: probably add a delete tower function later (?)

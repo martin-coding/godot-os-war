@@ -15,4 +15,6 @@ func broadcast_buy_tower(price):
 	emit_signal("on_buy_tower", price)
 
 func broadcast_hover_ui(b_is_hovered):
+	#TODO: Matt T: there's gotta be a better way to do this.
+	# This is so you don't accidentally place turrets while selecting in the UI
 	emit_signal("on_player_hover_ui", b_is_hovered)
