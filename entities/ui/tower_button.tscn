@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://deuhw3whq8lk5"]
 
-[ext_resource type="Script" path="res://scripts/ui/towerbutton.gd" id="1_rlvxp"]
-[ext_resource type="Texture2D" uid="uid://cabrl2kgpgooo" path="res://art/currency.png" id="3_3fuuw"]
+[ext_resource type="Script" path="res://scripts/ui/towerbutton.gd" id="1_y8ct0"]
+[ext_resource type="Texture2D" uid="uid://cabrl2kgpgooo" path="res://art/currency.png" id="2_yj8w7"]
 
 [sub_resource type="Theme" id="Theme_1w0x3"]
 Label/font_sizes/font_size = 39
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "
 "
-script = ExtResource("1_rlvxp")
+script = ExtResource("1_y8ct0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,7 +39,7 @@ metadata/_edit_group_ = true
 
 [node name="TowerImage" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_3fuuw")
+texture = ExtResource("2_yj8w7")
 stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -50,7 +50,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_3fuuw")
+texture = ExtResource("2_yj8w7")
 stretch_mode = 5
 
 [node name="PriceText" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -59,3 +59,5 @@ theme = SubResource("Theme_1w0x3")
 text = "50"
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5bpm1i4e17tu"]
+[gd_scene load_steps=7 format=3 uid="uid://c5bpm1i4e17tu"]
 
-[ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/towerbutton.tscn" id="1_77xj1"]
+[ext_resource type="Script" path="res://scripts/ui/towers_panel.gd" id="1_x58qh"]
 [ext_resource type="PackedScene" uid="uid://cxhkiae15b8lv" path="res://entities/tower/speed_tower.tscn" id="2_cya8s"]
+[ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/tower_button.tscn" id="2_h3r6b"]
 [ext_resource type="Script" path="res://scripts/ui/healthui.gd" id="2_y5457"]
 [ext_resource type="PackedScene" uid="uid://c5ouqw68u8sy3" path="res://entities/ui/money_ui.tscn" id="3_15x11"]
 
@@ -11,22 +12,23 @@ subpixel_positioning = 0
 
 [node name="GameUI" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TowersPanel" type="Panel" parent="."]
 offset_left = 828.0
 offset_top = 962.0
 offset_right = 1228.0
 offset_bottom = 1059.0
+script = ExtResource("1_x58qh")
 metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TowersPanel"]
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 50.0
 
-[node name="TowerButton" parent="Panel/HBoxContainer" instance=ExtResource("1_77xj1")]
+[node name="TowerButton" parent="TowersPanel/HBoxContainer" instance=ExtResource("2_h3r6b")]
 layout_mode = 2
 
-[node name="TowerButton2" parent="Panel/HBoxContainer" instance=ExtResource("1_77xj1")]
+[node name="TowerButton2" parent="TowersPanel/HBoxContainer" instance=ExtResource("2_h3r6b")]
 layout_mode = 2
 tower_class_reference = ExtResource("2_cya8s")
 
@@ -45,3 +47,6 @@ offset_left = 831.0
 offset_top = 913.0
 offset_right = 899.0
 offset_bottom = 953.0
+
+[connection signal="mouse_entered" from="TowersPanel" to="TowersPanel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TowersPanel" to="TowersPanel" method="_on_mouse_exited"]

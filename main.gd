@@ -2,6 +2,8 @@ extends Node2D
 
 var health: int = 100
 var money: int = 100
+
+var b_in_ui = false
 @onready var enemy = preload("res://entities/enemy.tscn")
 @onready var healthLbl = get_node("UI Control/Health")
 @onready var spawners: Array = get_tree().get_nodes_in_group("spawn_location")
@@ -12,6 +14,7 @@ signal player_money_update
 func _ready():
 	eventmanager.connect("on_player_take_damage", _on_damage_player)
 	eventmanager.connect("on_buy_tower", _on_buy_tower)
+	eventmanager.connect("on_player_hover_ui", on_player_hover_ui)
 
 	emit_signal("player_money_update", money)
 	for spawner in spawners:
@@ -23,6 +26,9 @@ func _ready():
 func _on_buy_tower(price) -> void:
 	money -= price
 	emit_signal("player_money_update", money)
+
+func on_player_hover_ui(b_is_in_ui) -> void:
+	b_in_ui = b_is_in_ui
 
 func _on_timer_timeout():
 	for spawner in spawners:
@@ -36,6 +42,9 @@ func get_health() -> int:
 
 func get_money() -> int:
 	return money
+
+func is_player_in_ui() -> bool:
+	return b_in_ui
 
 func _on_damage_player(value) -> void:
 	health -= value
