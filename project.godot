@@ -36,7 +36,9 @@ left_click={
 
 [layer_names]
 
+2d_physics/layer_1="default"
 2d_physics/layer_2="tower"
+2d_physics/layer_3="enemy_path"
 
 [rendering]
 
