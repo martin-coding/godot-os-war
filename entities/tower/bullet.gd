@@ -14,7 +14,6 @@ func _ready():
 func _physics_process(delta):
 	move = Vector2.ZERO
 	move = move.move_toward(look_vec, delta * speed)
-	#move = move.normalized() * speed
 	global_position += move
 
 
