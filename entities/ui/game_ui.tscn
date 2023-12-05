@@ -16,7 +16,7 @@ subpixel_positioning = 0
 offset_left = 828.0
 offset_top = 962.0
 offset_right = 1228.0
-offset_bottom = 1062.0
+offset_bottom = 1059.0
 script = ExtResource("1_x58qh")
 metadata/_edit_group_ = true
 
@@ -33,10 +33,10 @@ layout_mode = 2
 tower_class_reference = ExtResource("2_cya8s")
 
 [node name="Health" type="Label" parent="."]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 184.0
-offset_bottom = 58.0
+offset_left = 7.0
+offset_top = 96.0
+offset_right = 181.0
+offset_bottom = 144.0
 theme_override_fonts/font = SubResource("SystemFont_lad62")
 theme_override_font_sizes/font_size = 28
 text = "100 ❤️"

@@ -8,19 +8,19 @@ font_weight = 600
 subpixel_positioning = 0
 
 [node name="Money" type="HBoxContainer"]
-offset_right = 68.0
-offset_bottom = 40.0
+offset_left = 744.0
+offset_top = 990.0
+offset_right = 812.0
+offset_bottom = 1030.0
 script = ExtResource("1_p8ym8")
 metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
 layout_mode = 2
 texture = ExtResource("1_uxkof")
 stretch_mode = 5
 
 [node name="MoneyText" type="Label" parent="."]
-texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_lad62")
 theme_override_font_sizes/font_size = 28
