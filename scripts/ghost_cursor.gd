@@ -28,7 +28,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	var collisions = collision_area.get_overlapping_areas()
-	if is_instance_valid(collisions) == false:
+	if collisions == []:
 		collisions = collision_area.get_overlapping_bodies()
 	var b_in_ui = helper.get_game().is_player_in_ui()
 	if collisions or b_in_ui:
