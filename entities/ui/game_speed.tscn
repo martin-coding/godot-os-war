@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dofqeudsrivo2"]
+
+[ext_resource type="Texture2D" uid="uid://dgs8tgevnhdl4" path="res://art/game_speed_regular.png" id="1_q8q07"]
+[ext_resource type="Script" path="res://scripts/ui/game_speed.gd" id="1_t1kv7"]
+[ext_resource type="Texture2D" uid="uid://yltxd6du0q6x" path="res://art/game_speed_quick.png" id="3_b8k82"]
+
+[node name="GameSpeed" type="Button"]
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_t1kv7")
+regular_speed_image = ExtResource("1_q8q07")
+quick_speed_image = ExtResource("3_b8k82")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 99.0
+texture = ExtResource("1_q8q07")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
