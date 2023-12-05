@@ -10,10 +10,17 @@ var b_in_ui = false
 signal player_health_update
 signal player_money_update
 
+func set_game_speed(speed):
+	Engine.time_scale = speed
+
+func get_game_speed():
+	return Engine.time_scale
+
 func _ready():
 	eventmanager.connect("on_player_take_damage", _on_damage_player)
 	eventmanager.connect("on_buy_tower", _on_buy_tower)
 	eventmanager.connect("on_player_hover_ui", on_player_hover_ui)
+	eventmanager.connect("on_toggle_game_speed", _on_toggle_game_speed)
 
 	emit_signal("player_money_update", money)
 	for spawner in spawners:
@@ -49,3 +56,8 @@ func _on_damage_player(value) -> void:
 	health -= value
 	emit_signal("player_health_update")
 
+func _on_toggle_game_speed(b_sped_up):
+	if b_sped_up:
+		set_game_speed(3)
+	else:
+		set_game_speed(1)

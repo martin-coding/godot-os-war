@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5bpm1i4e17tu"]
+[gd_scene load_steps=8 format=3 uid="uid://c5bpm1i4e17tu"]
 
 [ext_resource type="Script" path="res://scripts/ui/towers_panel.gd" id="1_x58qh"]
 [ext_resource type="PackedScene" uid="uid://cxhkiae15b8lv" path="res://entities/tower/speed_tower.tscn" id="2_cya8s"]
 [ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/tower_button.tscn" id="2_h3r6b"]
 [ext_resource type="Script" path="res://scripts/ui/healthui.gd" id="2_y5457"]
 [ext_resource type="PackedScene" uid="uid://c5ouqw68u8sy3" path="res://entities/ui/money_ui.tscn" id="3_15x11"]
+[ext_resource type="PackedScene" uid="uid://dofqeudsrivo2" path="res://entities/ui/game_speed.tscn" id="6_mepws"]
 
 [sub_resource type="SystemFont" id="SystemFont_lad62"]
 font_weight = 600
@@ -47,6 +48,12 @@ offset_left = 831.0
 offset_top = 913.0
 offset_right = 899.0
 offset_bottom = 953.0
+
+[node name="GameSpeed" parent="." instance=ExtResource("6_mepws")]
+offset_left = 1795.0
+offset_top = 954.0
+offset_right = 1895.0
+offset_bottom = 1054.0
 
 [connection signal="mouse_entered" from="TowersPanel" to="TowersPanel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TowersPanel" to="TowersPanel" method="_on_mouse_exited"]

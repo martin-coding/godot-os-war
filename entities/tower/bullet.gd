@@ -1,7 +1,7 @@
 extends Area2D
 
 var move = Vector2.ZERO
-var speed = 5
+var speed = 500
 var look_vec = Vector2.ZERO
 var target
 var damage = 1
@@ -13,8 +13,8 @@ func _ready():
 
 func _physics_process(delta):
 	move = Vector2.ZERO
-	move = move.move_toward(look_vec, delta)
-	move = move.normalized() * speed
+	move = move.move_toward(look_vec, delta * speed)
+	#move = move.normalized() * speed
 	global_position += move
 
 
