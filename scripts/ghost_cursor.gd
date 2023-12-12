@@ -37,7 +37,9 @@ func _physics_process(delta):
 		b_can_place = true
 
 func _input(event):
-	#TODO: Matt T: we should probably not have them be able to spawn in the track
+	if event.is_action_pressed('right_click'):
+		tower_to_place = null
+		tower_cost = 0
 	if b_can_place == false and is_instance_valid(tower_to_place):
 		return
 	if is_instance_valid(tower_to_place):

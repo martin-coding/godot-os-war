@@ -50,6 +50,7 @@ offset_right = 899.0
 offset_bottom = 953.0
 
 [node name="GameSpeed" parent="." instance=ExtResource("6_mepws")]
+texture_filter = 1
 offset_left = 1795.0
 offset_top = 954.0
 offset_right = 1895.0
