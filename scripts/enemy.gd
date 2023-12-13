@@ -8,7 +8,7 @@ var health = 2
 var damage = 5
 
 func _ready():
-	progress = 0
+	progress = randf_range(0.0, 40.0) # avoid enemies spawning exactly on top of each other
 
 func _process(delta):
 	sprite_reference.material.set_shader_parameter("progress", get_hit_timer_progress())
@@ -21,6 +21,7 @@ func _physics_process(delta):
 		progress += speed * delta
 	else:
 		eventmanager.broadcast_player_take_damage(get_damage())
+		eventmanager.broadcast_on_enemy_killed(self) # broadcast enemy got killed
 		queue_free()
 
 func get_damage():
@@ -32,5 +33,5 @@ func _on_area_2d_area_entered(area):
 		health -= area.get_damage()
 		area.queue_free() # destroy the projectile
 		if health == 0:
+			eventmanager.broadcast_on_enemy_killed(self) # broadcast enemy got killed
 			queue_free() # "kill" the enemy
-			print("Enemy died")

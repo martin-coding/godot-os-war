@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5bpm1i4e17tu"]
+[gd_scene load_steps=9 format=3 uid="uid://c5bpm1i4e17tu"]
 
 [ext_resource type="Script" path="res://scripts/ui/towers_panel.gd" id="1_x58qh"]
 [ext_resource type="PackedScene" uid="uid://cxhkiae15b8lv" path="res://entities/tower/speed_tower.tscn" id="2_cya8s"]
 [ext_resource type="PackedScene" uid="uid://deuhw3whq8lk5" path="res://entities/ui/tower_button.tscn" id="2_h3r6b"]
 [ext_resource type="Script" path="res://scripts/ui/healthui.gd" id="2_y5457"]
 [ext_resource type="PackedScene" uid="uid://c5ouqw68u8sy3" path="res://entities/ui/money_ui.tscn" id="3_15x11"]
+[ext_resource type="Script" path="res://entities/ui/waveui.gd" id="5_a80xb"]
 [ext_resource type="PackedScene" uid="uid://dofqeudsrivo2" path="res://entities/ui/game_speed.tscn" id="6_mepws"]
 
 [sub_resource type="SystemFont" id="SystemFont_lad62"]
@@ -42,6 +43,16 @@ theme_override_fonts/font = SubResource("SystemFont_lad62")
 theme_override_font_sizes/font_size = 28
 text = "100 ❤️"
 script = ExtResource("2_y5457")
+
+[node name="Wave" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 184.0
+offset_bottom = 98.0
+theme_override_fonts/font = SubResource("SystemFont_lad62")
+theme_override_font_sizes/font_size = 28
+text = "Wave: "
+script = ExtResource("5_a80xb")
 
 [node name="Money" parent="." instance=ExtResource("3_15x11")]
 offset_left = 831.0

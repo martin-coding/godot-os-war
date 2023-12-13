@@ -2,6 +2,9 @@ extends Node2D
 
 var health: int = 100
 var money: int = 100
+var difficulty: int = 5
+var wave: int = 0
+var enemyList: Array
 
 var b_in_ui = false
 @onready var enemy = preload("res://entities/enemy.tscn")
@@ -9,6 +12,7 @@ var b_in_ui = false
 
 signal player_health_update
 signal player_money_update
+signal wave_update
 
 func set_game_speed(speed):
 	Engine.time_scale = speed
@@ -21,13 +25,9 @@ func _ready():
 	eventmanager.connect("on_buy_tower", _on_buy_tower)
 	eventmanager.connect("on_player_hover_ui", on_player_hover_ui)
 	eventmanager.connect("on_toggle_game_speed", _on_toggle_game_speed)
+	eventmanager.connect("on_enemy_killed", onEnemyKilled)
 
 	emit_signal("player_money_update", money)
-	for spawner in spawners:
-		var new_enemy = enemy.instantiate()
-		new_enemy.speed = randf_range(60.0, 120.0)
-		new_enemy.set_progress(randf_range(0.0, 20.0)) # avoid enemies spawning exactly on top of each other
-		spawner.add_child(new_enemy)
 
 func _on_buy_tower(price) -> void:
 	money -= price
@@ -37,11 +37,19 @@ func on_player_hover_ui(b_is_in_ui) -> void:
 	b_in_ui = b_is_in_ui
 
 func _on_timer_timeout():
-	for spawner in spawners:
-		var new_enemy = enemy.instantiate()
-		new_enemy.speed = randf_range(40.0, 120.0)
-		new_enemy.set_progress(randf_range(0.0, 20.0))
-		spawner.add_child(new_enemy)
+	# TODO: Different Enemy Types | ex. Instead of Spawning 5 Enemies, spawn a more difficult one
+	# TODO: (may be fixed with the todo above): When large amounts of enemies need to be spawned, the spawning lags the game
+	if enemyList == []:
+		wave += 1
+		emit_signal("wave_update", wave)
+		for i in difficulty:
+			var spawner = spawners[randi_range(0, spawners.size()-1)]
+			var new_enemy = enemy.instantiate()
+			new_enemy.speed = randf_range(40.0, 120.0)
+			spawner.add_child(new_enemy)
+			enemyList.append(new_enemy)
+		difficulty = difficulty + ceil(wave * 1.2)
+		print("Difficulty: " + str(difficulty))
 
 func get_health() -> int:
 	return health
@@ -55,6 +63,12 @@ func is_player_in_ui() -> bool:
 func _on_damage_player(value) -> void:
 	health -= value
 	emit_signal("player_health_update")
+
+func onEnemyKilled(enemy) -> void:
+	enemyList.erase(enemy)
+	money += 1
+	emit_signal("player_money_update", money)
+	# TODO: Dont add money when the enemy gets destroyed due to finishing the path
 
 func _on_toggle_game_speed(b_sped_up):
 	if b_sped_up:

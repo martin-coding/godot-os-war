@@ -5,6 +5,7 @@ signal tower_button_pressed(towerButton)
 signal on_buy_tower(price)
 signal on_player_hover_ui(b_is_hovered)
 signal on_toggle_game_speed(bSpedUp)
+signal on_enemy_killed(enemy)
 
 func broadcast_player_take_damage(amount):
 	emit_signal("on_player_take_damage", amount)
@@ -22,3 +23,6 @@ func broadcast_hover_ui(b_is_hovered):
 
 func broadcast_toggle_game_speed(b_sped_up):
 	emit_signal("on_toggle_game_speed", b_sped_up)
+
+func broadcast_on_enemy_killed(enemy):
+	emit_signal("on_enemy_killed", enemy)
