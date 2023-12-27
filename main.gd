@@ -37,17 +37,23 @@ func on_player_hover_ui(b_is_in_ui) -> void:
 	b_in_ui = b_is_in_ui
 
 func _on_timer_timeout():
-	# TODO: Different Enemy Types | ex. Instead of Spawning 5 Enemies, spawn a more difficult one
+	# TODO: Different Enemy Types | ex. Instead of Spawning 5 Enemies, spawn a more difficult one -- kind of done, need to implement more enemies
 	# TODO: (may be fixed with the todo above): When large amounts of enemies need to be spawned, the spawning lags the game
 	if enemyList == []:
 		wave += 1
 		emit_signal("wave_update", wave)
-		for i in difficulty:
+		var localDiff = difficulty
+		while localDiff > 0:
 			var spawner = spawners[randi_range(0, spawners.size()-1)]
 			var new_enemy = enemy.instantiate()
-			new_enemy.speed = randf_range(40.0, 120.0)
+			if (localDiff >= 10):
+				new_enemy.type = 2
+				localDiff -= 5
+			else:
+				localDiff -= 1
 			spawner.add_child(new_enemy)
 			enemyList.append(new_enemy)
+
 		difficulty = difficulty + ceil(wave * 1.2)
 		print("Difficulty: " + str(difficulty))
 

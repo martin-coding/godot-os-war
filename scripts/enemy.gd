@@ -1,14 +1,21 @@
 extends PathFollow2D
 
-@export var speed: float # gets set in main.gd, so we dont really need to initialize any value here
+@export var type: int
 @onready var sprite_reference = get_node("Sprite2D")
+@onready var type2texture = preload("res://art/enemy/enemy-02.png")
 @onready var hit_timer = get_node("HitTimer")
 
 var health = 2
 var damage = 5
+var speed: float
 
 func _ready():
 	progress = randf_range(0.0, 40.0) # avoid enemies spawning exactly on top of each other
+	speed = randf_range(40.0, 80.0)
+	if (type == 2):
+		sprite_reference.texture = type2texture
+		health = 10
+		speed = randf_range(60.0, 120.0)
 
 func _process(delta):
 	sprite_reference.material.set_shader_parameter("progress", get_hit_timer_progress())
