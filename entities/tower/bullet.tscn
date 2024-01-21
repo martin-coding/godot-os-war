@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://khxb3ax8ilx6"]
 
 [ext_resource type="Script" path="res://entities/tower/bullet.gd" id="1_kf5fa"]
-[ext_resource type="Texture2D" uid="uid://ccnc8fs76m20c" path="res://icon.svg" id="2_4nxkc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0h6pw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b816v"]
-size = Vector2(25, 25)
 
 [node name="Area2D" type="Area2D" groups=["projectile"]]
 scale = Vector2(0.2, 0.2)
@@ -12,7 +12,7 @@ script = ExtResource("1_kf5fa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
-texture = ExtResource("2_4nxkc")
+texture = SubResource("PlaceholderTexture2D_0h6pw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(5, 5)

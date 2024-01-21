@@ -19,7 +19,7 @@ texture = ExtResource("2_ddckq")
 [node name="SightArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
-scale = Vector2(30, 30)
+scale = Vector2(35, 35)
 shape = SubResource("CircleShape2D_47qsh")
 
 [node name="ShootTimer" type="Timer" parent="."]

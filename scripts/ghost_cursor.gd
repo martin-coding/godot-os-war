@@ -18,7 +18,7 @@ func _on_tower_button_pressed(towerButton):
 	tower_cost = towerButton.get_cost()
 	offset = ghost_image.size
 
-func _process(delta):
+func _process(_delta):
 	global_position = get_global_mouse_position() - offset
 	if b_can_place:
 		modulate = "72c65b"
@@ -26,7 +26,7 @@ func _process(delta):
 		modulate = "f00000"
 	visible = is_instance_valid(tower_to_place)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var collisions = collision_area.get_overlapping_areas()
 	if collisions == []:
 		collisions = collision_area.get_overlapping_bodies()

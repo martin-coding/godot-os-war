@@ -4,6 +4,7 @@ extends PathFollow2D
 @onready var sprite_reference = get_node("Sprite2D")
 @onready var type2texture = preload("res://art/enemy/enemy-02.png")
 @onready var hit_timer = get_node("HitTimer")
+@onready var animator = get_node("AnimationPlayer")
 
 var health = 2
 var damage = 5
@@ -17,7 +18,7 @@ func _ready():
 		health = 10
 		speed = randf_range(60.0, 120.0)
 
-func _process(delta):
+func _process(_delta):
 	sprite_reference.material.set_shader_parameter("progress", get_hit_timer_progress())
 
 func get_hit_timer_progress():
@@ -41,4 +42,6 @@ func _on_area_2d_area_entered(area):
 		area.queue_free() # destroy the projectile
 		if health == 0:
 			eventmanager.broadcast_on_enemy_killed(self) # broadcast enemy got killed
-			queue_free() # "kill" the enemy
+			animator.play("Death")
+
+			#queue_free() # "kill" the enemy

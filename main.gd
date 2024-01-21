@@ -4,7 +4,9 @@ var health: int = 100
 var money: int = 100
 var difficulty: int = 5
 var wave: int = 0
-var enemyList: Array
+#var enemyList: Array
+var enemyCount: int = 0
+var waveDiff: int = 0
 
 var b_in_ui = false
 @onready var enemy = preload("res://entities/enemy.tscn")
@@ -29,6 +31,18 @@ func _ready():
 
 	emit_signal("player_money_update", money)
 
+func _physics_process(_delta: float) -> void:
+	if waveDiff > 0:
+		var spawner = spawners[randi_range(0, spawners.size()-1)]
+		var new_enemy = enemy.instantiate()
+		if waveDiff >= 10:
+			new_enemy.type = 2
+			waveDiff -= 5
+		else:
+			waveDiff -= 1
+		spawner.add_child(new_enemy)
+		enemyCount += 1
+
 func _on_buy_tower(price) -> void:
 	money -= price
 	emit_signal("player_money_update", money)
@@ -39,20 +53,10 @@ func on_player_hover_ui(b_is_in_ui) -> void:
 func _on_timer_timeout():
 	# TODO: Different Enemy Types | ex. Instead of Spawning 5 Enemies, spawn a more difficult one -- kind of done, need to implement more enemies
 	# TODO: (may be fixed with the todo above): When large amounts of enemies need to be spawned, the spawning lags the game
-	if enemyList == []:
+	if enemyCount <= 0 && waveDiff <= 0:
 		wave += 1
 		emit_signal("wave_update", wave)
-		var localDiff = difficulty
-		while localDiff > 0:
-			var spawner = spawners[randi_range(0, spawners.size()-1)]
-			var new_enemy = enemy.instantiate()
-			if (localDiff >= 10):
-				new_enemy.type = 2
-				localDiff -= 5
-			else:
-				localDiff -= 1
-			spawner.add_child(new_enemy)
-			enemyList.append(new_enemy)
+		waveDiff = difficulty
 
 		difficulty = difficulty + ceil(wave * 1.2)
 		print("Difficulty: " + str(difficulty))
@@ -70,8 +74,8 @@ func _on_damage_player(value) -> void:
 	health -= value
 	emit_signal("player_health_update")
 
-func onEnemyKilled(enemy) -> void:
-	enemyList.erase(enemy)
+func onEnemyKilled(_enemy) -> void:
+	enemyCount -= 1
 	money += 1
 	emit_signal("player_money_update", money)
 	# TODO: Dont add money when the enemy gets destroyed due to finishing the path
